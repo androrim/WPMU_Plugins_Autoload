@@ -22,7 +22,7 @@ class WPMU_Plugins_Autoload
 		self::include_plugin( self::get_folders($files) );
 	}
 	
-	private static function parse_files( $file_path ) 
+	private function parse_files( $file_path ) 
 	{
 		$files = scandir( $file_path );
 		
@@ -59,7 +59,7 @@ class WPMU_Plugins_Autoload
 		return $files;
 	}
 	
-	private static function include_plugin( $subfolders ) 
+	private function include_plugin( $subfolders ) 
 	{
 		foreach ( $subfolders as $file ) {
 			$files = self::get_files( self::parse_files( $file ) );
